@@ -1,49 +1,90 @@
+/* RESET */
 html, body {
   height: 100%;
   margin: 0;
 }
 
+/* LAYOUT GENERAL */
 body {
-    background-color: rgb(232, 132, 171);
+  background-color: rgb(232, 132, 171);
+
   display: flex;
-  flex-direction: column;   /* Apila los elementos en columna */
-  justify-content: center;  /* Centra verticalmente */
-  align-items: center;      /* Centra horizontalmente */
-  text-align: center;       /* Centra el texto dentro de los elementos */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
   gap: 40px;
+
+  padding: 20px; /* importante para celular */
 }
 
-
-
-img{
-    max-width: 100%;
-    height: auto;
-    
-  
+/* IMAGEN RESPONSIVE */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px; /* opcional, se ve bonito */
 }
 
+/* TITULO */
+#mensaje {
+  font-size: 2rem;
+  max-width: 600px;
+}
+
+/* BOTONES BASE */
+button {
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* BOTON SI */
 #crecer {
-
   background-color: #65a750;
-  margin: 40px;
-  width: 100px;
-  height: 100px;
-  font-size: 50px;
-
+  margin: 20px;
+  width: 120px;
+  height: 120px;
+  font-size: 2rem;
 }
 
+/* BOTON NO */
 #rechazao {
-  width: 100px;
-    height: 100px;
-    font-size: 50px;
-  background-color: #e16d6d
-  ;
+  width: 120px;
+  height: 120px;
+  font-size: 2rem;
+  background-color: #e16d6d;
 }
 
-#volver{
+/* BOTON VOLVER */
+#volver {
   width: 200px;
   background-color: #e96565;
-  font-size: 20px;
+  font-size: 1.2rem;
+  padding: 10px;
+}
 
+/* 🔥 RESPONSIVE PARA CELULARES */
+@media (max-width: 600px) {
 
+  #mensaje {
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+
+  #crecer, #rechazao {
+    width: 80px;
+    height: 80px;
+    font-size: 1.3rem;
+  }
+
+  #volver {
+    width: 150px;
+    font-size: 1rem;
+  }
+
+  body {
+    gap: 20px;
+  }
 }
