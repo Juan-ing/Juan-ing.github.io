@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +10,68 @@
 <body>
 
 <header>
-    <img src="imagen_juan.jpeg" alt="amor de tu vida">
+    <img id="imgp" src="Imagenes/imagen_juan.jpeg" alt="amor de tu vida">
 </header>
 
 <nav>
-    <h1>Te gustaria ser el San Valentin de este bello hombre junto con este hermoso gato?</h1>
+    <h1 id="mensaje">
+        ¿Te gustaría ser el San Valentín de este bello hombre? <br>
+        te ofrece un hermoso y espectacular gato si aceptas >uO
+    </h1>
 </nav>
 
 <main>
-    <button>SI</button>
-    <button>NO</button>
+
+    <a href="aceptado.html">
+        <button id="crecer">SI</button>
+    </a>
+
+
+    <button id="rechazao">NO</button>
+
 </main>
+
+<script>
+
+
+let escala = 1;
+let contador = 0;
+
+const btnSi = document.getElementById("crecer");
+const btnNo = document.getElementById("rechazao");
+const mensaje = document.getElementById("mensaje");
+const imgp = document.getElementById("imgp");
+
+const mensajes = [
+    "¿Estás segura?",
+    "¿En serio? ¿No quieres un gato tan lindo?",
+    "¡Vamos! Un gato es la mejor compañía.",
+    "¿No te gustan los gatos? ¡Eso es triste!",
+    "¡Piénsalo bien! Un gato (y yo) puede alegrar tu vida.",
+    "¡Última oportunidad! ¿Nos quieres o no?"
+];
+
+
+btnSi.style.transition = "0.3s";
+
+
+btnNo.addEventListener("click", function() {
+
+     imgp.src = "Imagenes/perrito.jpeg";
+    escala += 0.3;
+    btnSi.style.transform = `scale(${escala})`;
+
+    // cambiar texto del h1
+    if (contador < mensajes.length) {
+       
+        mensaje.textContent = mensajes[contador];
+        contador++;
+    } else {
+        mensaje.textContent = "Ya no tienes mas opciones, JAJAJJAJJJAAAJJAJA";
+    }
+});
+
+</script>
 
 </body>
 </html>
