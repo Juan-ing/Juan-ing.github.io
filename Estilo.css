@@ -16,8 +16,10 @@ body {
 
 
 img{
-    width: 400px;
-    height: 500px;
+    max-width: 100%;
+    height: auto;
+    
+  
 }
 
 #crecer {
@@ -42,5 +44,6 @@ img{
   width: 200px;
   background-color: #e96565;
   font-size: 20px;
+
 
 }
